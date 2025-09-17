@@ -10,7 +10,7 @@
     margin: 30px auto;
 
     grid-template-rows: [header-start] 100px [header-end box-start] 200px [box-end main-start] 400px [main-end footer-start] 100px [footer-end];
-    grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 200px;
+    grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 200px [grid-end];
     grid-gap: 30px;
 
     & > * {
@@ -23,7 +23,13 @@
 
     .header {
         //grid-column: 1 / 5;
-        grid-column: 1 / -1; // sonuna kadar kapla demek
+        //grid-column: 1 / -1; // sonuna kadar kapla demek
+        
+        //Line naming
+        grid-column: col-start 1 / col-end 1;
+        //veya
+        //grid-column: col-start 1 / col-start 2;
+        
         grid-row: 1 / 2;
     }
 
