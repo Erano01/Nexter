@@ -8,6 +8,17 @@
 // METHOD 3: Name Grid Areas
 // rootta grid-template-areas kullan
 // itemlerde grid-area: head; gibi kullanım yap.
+
+//Implicit(Örtük şekilde) ve Explicit(Açıkça) Gridler vardır.
+//grid-template-rows: repeat(2, 150px);
+//grid-template-columns: repeat(2, 1fr);
+//8 itemlik bir containerda yukardaki kodları kullandığında
+//otomatik olarak 2x2 ve 2x2 alt alta 8 kutu oluşturacaktır.
+//Bu özelliği product card design yaptığında kullan
+// grid-auto-rows, grid-auto-flow, grid-auto-columns
+//gibi değişkenleri ayarlayarak da sonraki üretilecek
+// kutuların boyutunu ve hizalandırmasını ayarlayabilirsin.
+
 .challenge {
     display: grid;
     width: 1000px;
