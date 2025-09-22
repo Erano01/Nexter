@@ -2,4 +2,6 @@
 
 .homes {
     background-color: $color-secondary;
+    grid-template-columns: center-start / center-end;
+    
 }

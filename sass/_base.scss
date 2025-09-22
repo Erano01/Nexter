@@ -1,17 +1,21 @@
 @use "./variables" as *;
 
+
+
+// resetting all elements default margin/padding values.
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
+    //We added 'inherit' here so that the alternative (border-box) or standard (content-box) 
+    //box model we specified in the html selector is inherited in all other selectors.
     box-sizing: inherit;
 }
 
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 10px / 16px = 62.5% -> 1rem = 10px
-
 }
 
 body {
@@ -21,9 +25,21 @@ body {
     line-height: 1.6;
 }
 
+// root grid container, you can also use body selector for this but
+// this is more cool practice
 .container {
     display: grid;
-
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    
+    grid-template-columns: 
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) 
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+    //test
+    & > * {
+        padding: 40px;
+        font-size: 3rem;
+    }
 }
 
