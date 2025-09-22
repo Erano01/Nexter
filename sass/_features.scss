@@ -6,9 +6,38 @@
     margin: 15rem 0;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto; // bunu yazmasanda implicit olarak böyle gerçekleşecek bu
+    //grid-template-columns: repeat(3, 1fr);
+    //grid-template-rows: auto auto; // bunu yazmasanda implicit olarak böyle gerçekleşecek bu
+
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
 
     grid-gap: 6rem;
+
+    //There were gaps between some headings and content. We solved this with align-items:start;
+    align-items: start;
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+
+        // -1 de kullanabilirdik ancak explicitly grid-template-rows kullanmadığımız için çalışmaz.
+        // onun için span 2 kullandık.
+        grid-row: 1 / span 2;
+
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+
 
 }
